@@ -1,7 +1,7 @@
 # docker-ngrok
 
-# Setup
-## you must set authtoken.
+## Setup
+### you must set authtoken.
  access [ngrok Dashboard](https://dashboard.ngrok.com/get-started/your-authtoken) or [sign up for a free ngrok account](https://dashboard.ngrok.com/signup)
 
 ```
@@ -9,7 +9,7 @@
 NGROK_AUTH=xxxx
 ```
 
-# Usage
+## Usage
 ```
 docker-compose up -d
 ```
