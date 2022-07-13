@@ -10,7 +10,7 @@ NGROK_AUTH=xxxx
 ```
 
 ## Usage
-run your containers
+create and start containers
 ```
 docker-compose up -d
 ```
