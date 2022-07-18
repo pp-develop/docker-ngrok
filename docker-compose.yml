@@ -20,7 +20,6 @@ services:
       NGROK_PROTOCOL: http
       NGROK_PORT: sample_app:80
       NGROK_AUTH: ${NGROK_AUTH}
-
     depends_on:
       - sample_app
     networks:
