@@ -10,12 +10,12 @@ NGROK_AUTH=xxxx
 ```
 
 ## Usage
-create and start containers
+1. create and start containers
 ```
 docker-compose up -d
 ```
 
-Access the web inspector http://localhost:4040
+2. Access the web inspector http://localhost:4040
 
 ## References
 https://hub.docker.com/r/wernight/ngrok/
