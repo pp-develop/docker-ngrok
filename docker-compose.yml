@@ -1,16 +1,11 @@
 version: "3.9"
 
-networks:
-  docker_ngrok:
-
 services:
   sample_app:
     image: nginx:stable-alpine
     container_name: nginx
     ports:
       - 80:80
-    networks:
-      - docker_ngrok
 
   ngrok:
     image: wernight/ngrok:latest
@@ -19,8 +14,10 @@ services:
     environment:
       NGROK_PROTOCOL: http
       NGROK_PORT: sample_app:80
-      NGROK_AUTH: ${NGROK_AUTH}
+      NGROK_AUTH: AUTH_TOKEN
     depends_on:
       - sample_app
-    networks:
-      - docker_ngrok
+
+networks:
+  default:
+    name: docker_ngrok
