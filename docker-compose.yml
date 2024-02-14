@@ -4,8 +4,6 @@ services:
   sample_app:
     image: nginx:stable-alpine
     container_name: nginx
-    volumes:
-      - ./html:/usr/share/nginx/html
     ports:
       - 80:80
 
