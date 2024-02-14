@@ -18,4 +18,4 @@ docker-compose up -d
 2. Access the web inspector http://localhost:4040
 
 ## References
-https://hub.docker.com/r/wernight/ngrok/
+https://hub.docker.com/r/ngrok/ngrok
