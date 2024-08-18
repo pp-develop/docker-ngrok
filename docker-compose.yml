@@ -2,13 +2,17 @@ version: "3.9"
 
 services:
   sample_app:
-    image: nginx:stable-alpine
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
     container_name: nginx
     ports:
       - 80:80
 
   ngrok:
-    image: ngrok/ngrok:latest
+    build:
+      context: ./docker/ngrok
+      dockerfile: Dockerfile
     restart: unless-stopped
     ports:
       - 4040:4040
