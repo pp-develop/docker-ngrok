@@ -8,6 +8,8 @@ services:
     container_name: nginx
     ports:
       - 80:80
+    networks:
+      - docker-ngrok-network
 
   ngrok:
     build:
@@ -16,12 +18,18 @@ services:
     restart: unless-stopped
     ports:
       - 4040:4040
-    command: ["http", "sample_app:80"]
+    command: ["http", "nginx:80"]
     environment:
       NGROK_AUTHTOKEN: AUTH_TOKEN
     depends_on:
       - sample_app
+    networks:
+      - docker-ngrok-network
 
 networks:
-  default:
-    name: docker_ngrok
+  docker-ngrok-network:
+    name: docker-ngrok-network
+    driver: bridge
+  # 外部ネットワークと接続する場合は以下のコメントを解除して使用
+  # docker-app-network:
+  #   external: true
